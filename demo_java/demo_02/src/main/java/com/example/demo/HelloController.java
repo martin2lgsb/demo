@@ -1,24 +1,29 @@
 package com.example.demo;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
 
 /**
  * Created by m2lgsb on 31/01/2018
  */
-@RestController
+//@RestController
+@Controller
+//@RequestMapping("/")
 public class HelloController {
 
-    @RequestMapping("/")
-    public String index() {
-        return "index page";
+    @GetMapping("/")
+    public String index(Model model) {
+        model.addAttribute("info", "FuckInfo, yeah!");
+        return "index/index";
     }
 
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    @GetMapping("/hello")
     public String hello() {
         return "Hello Bitch!";
     }
 
-    @RequestMapping(value = "/say/{id}", method = RequestMethod.GET)
+    @GetMapping("/say/{id}")
     public String say(@PathVariable("id") Integer id) {
         return "id: " + id;
     }
