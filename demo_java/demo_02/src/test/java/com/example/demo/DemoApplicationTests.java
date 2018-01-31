@@ -19,7 +19,7 @@ public class DemoApplicationTests {
 	@Test
 	public void test() {
 
-		userMapper.insert("fuckbitch", "334455", "11122223333");
+//		userMapper.insert("fuckbitch", "334455", "11122223333");
 		User u = userMapper.findUserByPhone("11122223333");
 		Assert.assertEquals("fuckbitch", u.getName());
 	}
