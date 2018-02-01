@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HelloWorld</title>
+</head>
+<body>
+<p>Apple</p>
+<p>Pear</p>
+<p>Banana</p>
+<!--<p>Hello World 1</p>-->
+<!--<p>Hello World 2</p>-->
+<!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+<script src="d3.v3.min.js"></script>
+<script>
+    // var p = d3.select("body").selectAll("p").text("www.d3js.com");
+    // p.style("color", "red").style("font-size", "72px");
+
+    var dataset = ["I like dog","I like cat","I like snake"];
+    var body = d3.select("body");
+    var p = body.selectAll("p");
+
+    p.data(dataset).text(function (d, i) {
+        return d;
+    });
+</script>
+</body>
+</html>

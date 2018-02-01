@@ -22,3 +22,24 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+### Laravel ###
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+/.idea
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.env
+
+
+.ipynb_checkpoints
+
+### Mac OS  ###
+.DS_Store
+
