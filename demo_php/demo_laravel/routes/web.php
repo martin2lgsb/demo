@@ -19,3 +19,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/redis', 'RedisController@index')->name('redis');
+
+Route::get('/publish', 'RedisController@publish')->name('publish');
