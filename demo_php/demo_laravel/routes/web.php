@@ -13,4 +13,9 @@
 
 Route::get('/', function () {
     return view('welcome');
+//    return response('fuck u!', 233)->header('Content-Type', 'text/plain');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
