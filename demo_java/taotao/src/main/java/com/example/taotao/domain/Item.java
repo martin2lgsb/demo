@@ -11,7 +11,7 @@ public class Item {
     private Integer id;
     private String title;
     private String sell_point;
-    private Integer prive;
+    private Integer price;
     private Integer num;
     private String barcode;
     private String image;

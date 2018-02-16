@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <h1>Item List</h1>
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+        </tr>
+        <tr th:each="item : ${items}">
+            <td th:text="${item.title}">名字</td>
+            <td th:text="${item.price} / 100 + '元'">1.23</td>
+        </tr>
+    </table>
+
+    <p>
+        <a href="" th:href="@{/item/by/} + ${findid}">finduserbyid</a>
+    </p>
+</body>
+</html>
