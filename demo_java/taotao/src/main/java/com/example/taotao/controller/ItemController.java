@@ -17,8 +17,8 @@ import java.util.List;
 /**
  * Created by m2lgsb on 16/02/2018 11:39
  */
-//@Controller
-@RestController
+@Controller
+//@RestController
 @RequestMapping("/item")
 public class ItemController {
 
@@ -36,11 +36,13 @@ public class ItemController {
     }
 
     @GetMapping("/up/{id}")
-    public String upPrice(@PathVariable("id") Integer id)  {
+    public String upPrice(@PathVariable("id") Integer id, Model model)  {
         Item i = itemMapper.findItemById(id);
         Integer oldPrice = i.getPrice();
         Integer newPrice = itemPriceUpService.upNine(oldPrice);
-        return i.getTitle() + ":" + oldPrice + "--" + newPrice;
+        String info = i.getTitle() + ":" + oldPrice + "--" + newPrice;
+        model.addAttribute("info", info);
+        return "hello/hello";
     }
 
     @GetMapping("/group/{offset}/{limit}")
@@ -49,6 +51,5 @@ public class ItemController {
         model.addAttribute("items", ii);
         model.addAttribute("findid", 691300);
         return "item/index";
-//        return ii;
     }
 }
