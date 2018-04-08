@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JS:emp_01</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+    <!--emp0101-->
+    <h1>标题</h1>
+    <p>段落</p>
+    <script>
+        document.write(Date());
+    </script>
+
+    <!--emp0102-->
+    <div class="row">
+        <div class="col-sm-10 text-center">
+            <p id="emp0102">未修改段落</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById("emp0102").innerHTML="段落已修改";
+    </script>
+
+    <!--emp0201-->
+    <div class="row">
+        <div class="col-sm-10 text-center">
+            <p id="emp020201">段落</p>
+            <div id="emp020202">DIV</div>
+            <button class="btn btn-sm btn-info" onclick="func020201()">点击这里</button>
+        </div>
+    </div>
+    <script>
+        function func020201() {
+            document.getElementById("emp020201").innerHTML="你好，锤子！";
+            document.getElementById("emp020202").innerHTML="你最近怎么样？";
+        }
+    </script>
+
+    <!--emp0301-->
+    <div class="row">
+        <div class="col-sm-10">
+            <p>
+                <script>
+                    var firstname;
+                    firstname="Hege";
+                    document.write(firstname);
+                    document.write("<br>");
+                    firstname="Tove";
+                    document.write(firstname);
+                </script>
+            </p>
+        </div>
+    </div>
+
+    <!--emp0403-->
+    <div class="row">
+        <div class="col-sm-10">
+            <p id="emp040301"></p>
+            <script>
+                var r=Math.random();
+                var x=document.getElementById("emp040301");
+                if (r>0.5) {
+                    x.innerHTML="<a href='http://www.runoob.com'>访问菜鸟教程</a>";
+                } else {
+                    x.innerHTML="<a href='http://wwf.org'>Visit WWF</a>";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!--emp0503-->
+    <div class="row">
+        <div class="col-sm-10">
+            <button class="btn btn-sm btn-info" onclick="func050301()">确认框</button>
+            <p id="emp050301"></p>
+            <script>
+                function func050301() {
+                    var x;
+                    var r=confirm("按下按钮！");
+                    if (r==true) {
+                        x="确定";
+                    } else {
+                        x="取消";
+                    }
+                    document.getElementById("emp050301").innerHTML="你按下了"+ x +"按钮！";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!--emp0504-->
+    <div class="row">
+        <div class="col-sm-10">
+            <button class="btn btn-sm btn-info" onclick="func050401()">输入框</button>
+            <p id="emp050401"></p>
+            <script>
+                function func050401() {
+                    var person=prompt("请输入你的名字", "Harry Potter");
+                    if (person != null && person != "") {
+                        document.getElementById("emp050401").innerHTML="你好，"+ person + "！你今天感觉如何？";
+                    }
+                }
+            </script>
+        </div>
+    </div>
+
+    <!--emp0603-->
+    <script>
+        function func060301(a, b) {
+            return a * b;
+        }
+        document.write("返回值的带有参数的函数："+ func060301(4, 3));
+    </script>
+
+    <!--emp0802-->
+    <div class="row">
+        <div class="col-sm-10">
+            <img src="http://www.runoob.com/try/demo_source/planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap"/>
+            <map name="planetmap">
+                <area shape="rect" coords="0, 0, 82, 126" href="http://www.runoob.com/try/demo_source/sun.htm" target="_blank" alt="Sun" onmouseover="func080201('太阳')">
+                <area shape="circle" coords="90, 58, 3" href="http://www.runoob.com/try/demo_source/mercur.htm" target="_blank" alt="Mercury" onmouseover="func080201('水星')">
+                <area shape="circle" coords="124, 58, 8" href="http://www.runoob.com/try/demo_source/venus.htm" target="_blank" alt="Venus" onmouseover="func080201('金星')">
+            </map>
+            <p id="desc0802">主图</p>
+        </div>
+        <script>
+            function func080201(txt) {
+                document.getElementById("desc0802").innerHTML=txt;
+            }
+        </script>
+    </div>
+
+    <!--emp0803-->
+    <div class="row">
+        <div class="col-sm-10 text-center">
+            <button class="btn btn-sm btn-info" onclick="func080301()">查看消息</button>
+        </div>
+        <script>
+            var txt0803;
+            function func080301() {
+                try {
+                    alertFail080301("Welcome guest!");
+                } catch (err) {
+                    txt0803 = "本页有一个错误\n\n";
+                    txt0803 += "错误描述："+ err.message +"\n\n";
+                    txt0803 += "点击确定继续\n\n";
+                    // alert(txt0803);
+                    if (confirm(txt0803)) {
+                        document.location.href="http://www.runoob.com/try/try.php?filename=tryjs_try_catch2";
+                    }
+                }
+            }
+        </script>
+    </div>
+
+    <!--emp0804-->
+    <div class="row">
+        <div class="col-sm-10">
+            <button class="btn btn-sm btn-info" onclick="message0804()">empONERROR</button>
+        </div>
+        <script>
+            onerror = handleErr;
+            var txt0804;
+            function handleErr(msg, url, l) {
+                txt0804 = "错误："+ msg +"\n\n";
+                txt0804 += "URL:"+ url +"\n\n";
+                txt0804 += "行："+ l + "\n\n";
+                alert(txt0804);
+                return true;
+            }
+
+            function message0804() {
+                alertFail080401("Welcome guest!");
+            }
+        </script>
+    </div>
+
+
+</div>
+
+
+<!--bootstrap jquery-->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

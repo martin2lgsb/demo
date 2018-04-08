@@ -1,0 +1,17 @@
+{
+  "name": "demo_00",
+  "homepage": "https://github.com/martin2lgsb/demo",
+  "authors": [
+    "Morgan <martin2lgsb@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS:emp_02</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s); //在小于10的数字前面加一个'0'
+            document.getElementById('txt1006').innerHTML=h+":"+m+':'+s;
+            t1006 = setTimeout("startTime()", 500);
+        }
+        
+        function checkTime(i) {
+            if (i<10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>
+</head>
+
+
+
+<body onload="startTime()">
+<div class="container-fluid">
+    <!--emp1002-->
+    <div class="row">
+        <div class="col-sm-10 text-center">
+            <button class="btn btn-sm btn-info" onclick="func100201()">简单计时3秒</button>
+        </div>
+        <script>
+            function func100201() {
+                setTimeout(function () {
+                    alert("Hello!")
+                }, 3000)
+            }
+        </script>
+    </div>
+
+    <!--emp1003-->
+    <div class="row">
+        <div class="col-sm-10 text-center">
+            <form>
+                <!--button点击：计时器无效-->
+                <!--<button class="btn btn-sm btn-info" onclick="timedText()">显示文本时间</button>-->
+
+                <input type="button" value="显示文本时间!" onclick="timedText()" />
+                <input type="text" id="txt1003" />
+            </form>
+        </div>
+        <script>
+            function timedText(){
+                var x=document.getElementById('txt1003');
+                var t1=setTimeout(function(){x.value="2 秒"},2000);
+                var t2=setTimeout(function(){x.value="4 秒"},4000);
+                var t3=setTimeout(function(){x.value="6 秒"},6000);
+            }
+        </script>
+    </div>
+
+    <!--emp1004-->
+    <div class="row">
+        <div class="col-sm-10 text-center">
+            <form action="">
+                <input type="button" value="开始计数：" onclick="doTimer()">
+                <input type="text" id="txt1004">
+                <input type="button" value="停止计数！" onclick="stopCount()">
+            </form>
+        </div>
+        <script>
+            var c = 0;
+            var t;
+            var timer_is_on = 0;
+            function timedCount() {
+                document.getElementById('txt1004').value = c;
+                c = c+1;
+                t = setTimeout("timedCount()", 1000);
+            }
+
+            function doTimer() {
+                if (!timer_is_on) {
+                    timer_is_on = 1;
+                    timedCount();
+                }
+            }
+
+            function stopCount() {
+                clearTimeout(t);
+                timer_is_on = 0;
+            }
+        </script>
+    </div>
+    
+    <!--emp1006-->
+    <div class="row">
+        <div class="col-sm-10 text-center">
+            <p id="txt1006"></p>
+        </div>
+    </div>
+
+    <!--emp1007-->
+    <div class="row">
+       <div class="col-sm-10 text-center">
+           <p>
+               <script>
+                   person = {
+                       firstname: "John",
+                       lastname: "Doe",
+                       age: 50,
+                       eyecolor: "blue"
+                   }
+                   document.write(person.firstname +" is "+ person.age +" years old.");
+               </script>
+           </p>
+       </div>
+    </div>
+
+    <!--emp1008-->
+    <div class="row">
+       <div class="col-sm-10 text-center">
+            <p>
+                <script>
+                    function man(firstname, lastname, age, eyecolor) {
+                        this.firstname = firstname;
+                        this.lastname = lastname;
+                        this.age = age;
+                        this.eyecolor = eyecolor;
+                    }
+                    sbFather = new man("Lilei", "Zhang", 24, "red");
+                    document.write(sbFather.firstname +" is "+ sbFather.age + " years old.");
+
+                </script>
+            </p>
+       </div>
+    </div>
+
+
+</div>
+
+
+
+<!--bootstrap jquery-->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
