@@ -43,3 +43,4 @@ yarn-error.log
 ### Mac OS  ###
 .DS_Store
 
+/bower_components
