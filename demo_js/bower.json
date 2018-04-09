@@ -1,12 +1,12 @@
 {
-  "name": "demo_00",
-  "homepage": "https://github.com/martin2lgsb/demo",
+  "name": "demo_js",
+  "description": "",
+  "main": "index.js",
   "authors": [
     "Morgan <martin2lgsb@gmail.com>"
   ],
-  "description": "",
-  "main": "",
-  "license": "MIT",
+  "license": "ISC",
+  "homepage": "https://github.com/martin2lgsb/demo",
   "ignore": [
     "**/.*",
     "node_modules",
