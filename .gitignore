@@ -33,3 +33,6 @@ nbdist/
 ###
 bower_components/
 node_modules/
+
+### hadoop
+demo_hadoop/
