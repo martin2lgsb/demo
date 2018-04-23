@@ -1,4 +1,5 @@
 import numpy as np
+import time
 
 N, D_in, H, D_out = 64, 1000, 100, 10
 
@@ -7,6 +8,8 @@ y = np.random.randn(N, D_out)
 
 w1 = np.random.randn(D_in, H)
 w2 = np.random.randn(H, D_out)
+
+start_time = time.time()
 
 learning_rate = 1e-6
 for t in range(500):
@@ -26,3 +29,5 @@ for t in range(500):
 
     w1 -= learning_rate * grad_w1
     w2 -= learning_rate * grad_w2
+
+print(time.time() - start_time)
