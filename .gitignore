@@ -24,16 +24,19 @@ dist/
 nbdist/
 .nb-gradle/
 
-###
+### IPython
 .ipynb_checkpoints
 
 ### Mac OS  ###
 .DS_Store
 
-###
+### npm bower
 bower_components/
 node_modules/
 
-### hadoop
+### Hadoop, Spark, ML
 demo_hadoop/
 demo_clone/
+
+
+### Unversioned files
