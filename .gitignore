@@ -35,6 +35,10 @@ bower_components/
 node_modules/
 
 ### Hadoop, Spark, ML
+lib/
+
+
+### Local Project
 demo_hadoop/
 demo_clone/
 
