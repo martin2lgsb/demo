@@ -129,7 +129,7 @@ int demo_struct()
     cout << book1.author << endl;
 }
 
-int main()
+int xmain()
 {
 
 //    in_out();
