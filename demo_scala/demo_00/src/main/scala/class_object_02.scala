@@ -16,7 +16,8 @@ class class_object_02 {
 object class_object_02 {
   def main(args: Array[String]): Unit = {
     val a = new class_object_02
-    a.update("asdf")
+//    a.update("asdf")
+    a.name_("zzz")
     println(a.name)
 
     a.bark("aaa")
