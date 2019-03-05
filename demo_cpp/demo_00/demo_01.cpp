@@ -61,7 +61,7 @@ int prime() {
 }
 
 
-int main() {
+int main01() {
 //    fibonacci_01();
 //    fibonacci_02();
     prime();

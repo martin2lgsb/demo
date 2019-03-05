@@ -3,4 +3,4 @@ project(demo_00)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(demo_00 demo_00.cpp demo_01.cpp)
+add_executable(demo_00 demo_00.cpp demo_01.cpp demo_02.cpp demo_03.cpp demo_04.cpp)
