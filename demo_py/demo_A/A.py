@@ -45,7 +45,7 @@ class Map():
 
 
 def AStarSearch(map, source, dest):
-    def getNewPosition(map, locatioin, offset):
+    def getNewPosition(map, location, offset):
         x, y = (location.x + offset[0], location.y + offset[1])
         if x < 0 or x >= map.width or y < 0 or y >= map.height or map.map[y][x] == 1:
             return None
@@ -101,6 +101,7 @@ def AStarSearch(map, source, dest):
     def getFastPosition(openlist):
         fast = None
         for entry in openlist.values():
+            print(entry.getPos())
             if fast is None:
                 fast = entry
             elif fast.f_cost > entry.f_cost:
